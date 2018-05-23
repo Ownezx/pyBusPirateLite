@@ -183,7 +183,7 @@ class I2C(BBIO_base):
             raise ValueError("Could not transfer I2C data")
         self.timeout(self.minDelay * 10)
         status = []
-        for r in self.response(1, True):
+        for r in self.response(length, True):
             status.append(r == 0x00)
         return status
 
